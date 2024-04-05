@@ -21,7 +21,7 @@ def render(df: pd.DataFrame):
 ### module's internal functions
 ###
 def __build_kpi_cards(df):
-    with streamlit.expander("Overall promotion & retrenchment stats...", expanded=True):
+    with streamlit.expander("Overall promotion & retrenchment stats...", expanded=False):
         ### List questions/objectives
         utils.show_questions(
             [
@@ -39,7 +39,7 @@ def __build_kpi_cards(df):
             __show_retrench_stats(df)
 
         ## List insights drawn wrt to objectives/questions
-        with streamlit.expander("View insights...", expanded=True):
+        with streamlit.expander("View insights...", expanded=False):
             utils.show_insights(
                 [
                     "* Rate of promotion is way short of the stipulated minimum "
@@ -107,7 +107,7 @@ def __show_retrench_stats(df):
 
 def __build_dept_promo_retrench_plots(df):
     with streamlit.expander(
-        "Analysis: Department wise promotion & retrenchment...", expanded=True
+        "Analysis: Department wise promotion & retrenchment...", expanded=False
     ):
         utils.show_questions(
             [
@@ -125,7 +125,7 @@ def __build_dept_promo_retrench_plots(df):
             df_retrench = data.get_dept_retrench_pct(df)
             fig = plots.plot_dept_retrench_bar(df_retrench)
             streamlit.plotly_chart(fig, use_container_width=True)
-        with streamlit.expander("View Insights...", expanded=True):
+        with streamlit.expander("View Insights...", expanded=False):
             utils.show_insights(
                 [
                     "* All three departments are doing extremely poorly when it comes "

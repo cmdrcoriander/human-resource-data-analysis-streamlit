@@ -76,7 +76,4 @@ def show_insights(insights: List[str]):
 
 ### module's internal/private functions
 def __set_banner_title(banner, title):
-    image = Image.open(banner)
-    image = image.resize((image.width, 150), resample=Image.Resampling.NEAREST)
-    streamlit.image(image=image)
     streamlit.title(title)

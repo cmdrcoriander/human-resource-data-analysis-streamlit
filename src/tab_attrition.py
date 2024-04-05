@@ -19,7 +19,7 @@ def render(df: pd.DataFrame):
 ### module's internal functions
 ###
 def __build_attrition_plots(df):
-    with streamlit.expander("Analysis: Employee Attrition...", expanded=True):
+    with streamlit.expander("Analysis: Employee Attrition...", expanded=False):
         utils.show_questions(
             [
                 "* Do we have attrition rate higher than 10%?",
@@ -136,7 +136,7 @@ def __build_attrition_plots(df):
                 )
         utils.sep()
 
-        with streamlit.expander("View Insights...", expanded=True):
+        with streamlit.expander("View Insights...", expanded=False):
             utils.show_insights(
                 [
                     "* Overall attrition rate is > 16%, well above the stipulated max"
