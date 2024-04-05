@@ -9,6 +9,9 @@ artifacts/
 .examples/
 .swp
 eda.ipynb
+venv
+.venv/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -38,6 +41,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.streamtest
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
