@@ -19,7 +19,7 @@ def plot_age_hist(df: DataFrame) -> Figure:
         x="Age",
         marginal="violin",
         title="Employee's age distribution overall",
-       # color_discrete_sequence=plot_config.cat_color_map,
+        
     )
     return fig
 
@@ -36,8 +36,7 @@ def plot_age_marital_status_pie(df: DataFrame) -> Figure:
         values="size",
         color="MaritalStatus",
         hole=0.7,
-        title="Employee count by marital-status",
-        #color_discrete_sequence=plot_config.cat_color_map,
+        title="Employee count by marital-status"
     ).update_traces(textfont_color="white")
     return fig
 
@@ -49,7 +48,7 @@ def plot_age_marital_status_box(df: DataFrame) -> Figure:
         y="Age",
         color="MaritalStatus",
         title="Employee's age distribution by marital-status",
-       # color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
     )
     return fig
 
@@ -61,7 +60,7 @@ def plot_age_gender_box(df: DataFrame) -> Figure:
         y="Age",
         color="Gender",
         title="Employee's age distribution by gender",
-       # color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
     )
     return fig
 
@@ -76,7 +75,7 @@ def plot_dept_gender_count_sunburst(df: DataFrame) -> Figure:
         data_frame=df_group,
         path=["Top", "Department", "Gender"],
         values="size",
-       # color_discrete_sequence=px.colors.qualitative.T10,
+        color_discrete_sequence=px.colors.qualitative.T10,
         title="Employee count in each department<br>segmented by gender",
     )
     fig.update_traces(
@@ -121,7 +120,7 @@ def plot_tot_work_exp_bar(df):
         x="size",
         y="WorkExperience",
         color="WorkExperience",
-       #color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
     ).update_traces(
         text="size",
         texttemplate="%{x:.1f}%",
@@ -139,7 +138,7 @@ def plot_cmp_work_exp_scatter(df, annot_text):
         size="PctAtCompany",
         color="PctAtCompany",
         opacity=0.6,
-     #   color_continuous_scale=plot_config.cont_color_map,
+        color_continuous_scale=plot_config.cont_color_map,
     )
     fig.add_annotation(
         x=0.1,
@@ -153,7 +152,7 @@ def plot_cmp_work_exp_scatter(df, annot_text):
         bordercolor="#4c78a8",
         borderwidth=1,
         borderpad=4,
-      #  bgcolor="#4c78a8",
+        bgcolor="#4c78a8",
         opacity=0.7,
     )
 
@@ -176,7 +175,7 @@ def plot_promotion_donut(df):
         names="Promotion",
         values="Count",
         hole=0.6,
-       # color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
         title="Company wide promotion",
     )
     fig.update_layout(
@@ -201,7 +200,7 @@ def plot_retrench_donut(df):
         names="Retrench",
         values="Count",
         hole=0.6,
-      #  color_discrete_sequence=plot_config.cat_color_map_r,
+        color_discrete_sequence=plot_config.cat_color_map_r,
         title="Company wide retrenchment",
     )
     fig.update_layout(
@@ -219,7 +218,7 @@ def plot_dept_promo_bar(df):
         y="PromotePct",
         color="ToBePromoted",
         barmode="group",
-      #  color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
         title="To be promoted<br>in each department",
     )
     fig.update_traces(
@@ -238,7 +237,7 @@ def plot_dept_retrench_bar(df):
         y="RetrenchPct",
         color="ToBeRetrenched",
         barmode="group",
-     #   color_discrete_sequence=plot_config.cat_color_map_r,
+        color_discrete_sequence=plot_config.cat_color_map_r,
         title="To be retrenched<br>in each department",
     )
     fig.update_traces(
@@ -258,7 +257,7 @@ def plot_dept_attrition(df):
         names="Department",
         values="% Attrition",
         hole=0.4,
-     #   color_discrete_sequence=plot_config.cat_color_map_r,
+        color_discrete_sequence=plot_config.cat_color_map_r,
         title="Attrition by Department",
     )
     fig.update_traces(
@@ -277,7 +276,7 @@ def plot_gender_attrition(df):
         names="Gender",
         values="% Attrition",
         hole=0.4,
-     #   color_discrete_sequence=plot_config.cat_color_map_r,
+        color_discrete_sequence=plot_config.cat_color_map_r,
         title="Attrition by Gender",
     ).update_traces(textfont_color="white", textinfo="label+percent", showlegend=False)
     fig.update_layout(
@@ -292,7 +291,7 @@ def plot_dist_attrition(df):
         y="WorkplaceProximity",
         x="% Attrition",
         color="WorkplaceProximity",
-      #  color_discrete_sequence=plot_config.cat_color_map_r,
+        color_discrete_sequence=plot_config.cat_color_map_r,
         title="Attrition by Distance",
     )
     fig.update_traces(
@@ -310,7 +309,7 @@ def plot_jobrole_attrition(df):
         x="JobRole",
         y="% Attrition",
         color="JobRole",
-     #   color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
         title="Attrition by Job Role",
     )
     fig.update_traces(
@@ -328,7 +327,7 @@ def plot_satis_attrition(df):
         y="JobSatisfaction",
         x="% Attrition",
         color="JobSatisfaction",
-      #  color_discrete_sequence=plot_config.cat_color_map,
+        color_discrete_sequence=plot_config.cat_color_map,
         title="Attrition by Job Satisfaction",
     )
     fig.update_traces(
